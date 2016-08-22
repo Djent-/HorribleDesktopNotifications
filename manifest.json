@@ -1,0 +1,32 @@
+{
+
+	"manifest_version": 2,
+	"name": "Horrible Desktop Notifications",
+	"version": "0.1",
+	
+	"description": "Adds a right click option to 480p/720p/1080p to deliver desktop notifications on release.",
+	
+	"icons": {
+		"48": "icons/hsdn-48.png"
+	},
+	
+	"permissions": [
+		"storage",
+		"notifications",
+		"alarms"
+	],
+	
+	"background": {
+		"scripts": ["background.js"]
+	},
+	
+	"content_scripts": [
+		{
+			"matches": ["*://*.horriblesubs.info/*"],
+			"js": ["jquery.js", "hsdn.js"]
+		}
+	],
+	"browser_action": {
+		"default_icon": "icons/hsdn-48.png"
+	}
+}
